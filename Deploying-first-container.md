@@ -25,4 +25,6 @@ Step1: Running a container -
  - Details about docker running container: docker inspect <friendly-name|container-id>:  docker inspect cb651d301476
  - Checking logs of running container: docker logs <friendly-name|container-id>: docker logs cb651d301476
  - To make the service accessible, expose the ports: docker run -d --name redisHostPort -p 6379:6379 redis:latest
- 
+ - Persist Data inside Container: docker run -d --name redisMapped -v opt/docker/data/redis:data redis, docker run -d --name redisMapped -v "$PWD/data":/data redis
+ - Running a container in foreground: docker run ubuntu ps
+ - Running a container interactively: docker run -it ubuntu ps
